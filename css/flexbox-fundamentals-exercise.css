@@ -132,6 +132,7 @@ section:nth-of-type(6) {
     height: 14em;
     /* enter needed declarations here */
     flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
 
 
