@@ -55,20 +55,19 @@ body {
 .cover {
     /* flex container */
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+
 }
 .flex-form {
-     display: flex;
-    justify-content: space-evenly;
+    display: flex;
+    margin: auto;
 
 
 
 }
 .destination {
     /* bigger item */
-     display: flex;
     width: 30%;
+/* or use flex-basis: 15em; instead of wdith */
 
 
 

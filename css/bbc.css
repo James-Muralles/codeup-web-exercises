@@ -4,7 +4,7 @@
 body {
     margin: 0;
 }
-nav {
+.nav-items {
     background: #333333;
     display: flex;
     flex-direction: row;
@@ -21,13 +21,13 @@ nav a {
     color: white;
     font-family: Verdana;
     /*display: inline-block;*/
-    /*padding: 1em;*/
+
 }
 .nav-item {
     text-decoration: none;
     color: white;
     font-family: Verdana;
-    display: inline-block;
+    /*display: inline-block;*/
     padding: 1em;
 }
 
@@ -35,6 +35,16 @@ nav a:hover {
     background: black;
 }
 
-#searchfield {
+li:nth-child(12) {
+    display: flex;
+    margin: auto;
+    align-self: center;
+}
+button {
+    /*background: white;*/
+    /*border: 1px solid white;*/
+    margin: auto;
+    position: absolute;
 
 }
+

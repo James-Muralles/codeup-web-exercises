@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    /*font-family: "Works Sans";*/
+}
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    height: inherit;
+    align-items: center;
+}
+nav {
+    color: black;
+    background: lightgrey;
+}
+a:hover {
+    color: blue;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    /*display: inline-block;*/
+}
+
+    li:nth-child(6){
+        margin-left: auto;
+    }
+
+#logo{
+    display: flex;
+    font-size: 3em;
+    padding: .2em 0 .2em 0;
+    /*position: absolute;*/
+    margin: ;
+}
+
