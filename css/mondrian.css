@@ -14,8 +14,6 @@ main {
     height: 500px;
     width: 500px;
     border: solid black 2px;
-    margin: 5px;
-
 }
 main div {
     border: black solid 2px;
