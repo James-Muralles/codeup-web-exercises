@@ -5,7 +5,7 @@ body {
     margin: 0;
 }
 .nav-items {
-    background: #333333;
+    background: #000000;
     display: flex;
     flex-direction: row;
 }
@@ -29,6 +29,7 @@ nav a {
     font-family: Verdana;
     /*display: inline-block;*/
     padding: 1em;
+    font-size: 13px;
 }
 
 nav a:hover {
@@ -37,14 +38,41 @@ nav a:hover {
 
 li:nth-child(12) {
     display: flex;
-    margin: auto;
-    align-self: center;
+   margin-left: auto;
+    align-items: center;
 }
-button {
-    /*background: white;*/
-    /*border: 1px solid white;*/
-    margin: auto;
-    position: absolute;
+li:nth-child(4) {
+    display: flex;
+    width: 150px;
+    border-right: white solid 1px;
+    border-left: white solid 1px;
+}
+li:nth-child(n+5):nth-child(-n+10) {
+    width: auto;
+    border-right: white solid 1px;
+}
+li:nth-child(11) {
+    width: 150px;
+    border-right: white solid 1px;
+}
+form:focus {
+    outline: none;
+}
+input {
+    flex-grow: 2;
+    border: none;
+    outline: none;
+}
 
+button {
+    border: 6px solid white;
+    margin-right: 10px;
+    /*color: white;*/
+}
+#b, #bb, #c {
+    display: flex;
+    background: white;
+    color: black;
+    /*border: solid black 1px;*/
 }
 
