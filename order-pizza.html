@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <title>Order Pizza</title>
+
+    <!--    <style>-->
+    <!--        .jumbotron {-->
+    <!--            background-image:  url("img/pizza.png");-->
+    <!--            background-size: cover;-->
+    <!--            background-position: center;-->
+    <!--            height: 50vh;-->
+    <!--        }-->
+    <!--    </style>-->
+</head>
+<body>
+<!--NAVBAR START-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Pizza World</a>
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Order online <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Menu</a>
+        </li>
+        <li>
+            <form class="form-inline d-flex">
+                <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="zip">
+                <button class="btn btn-light btn btn-outline-dark">Search stores near you!</button>
+            </form>
+        </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-light" type="submit">Sign up</button>
+    </form>
+</nav>
+<!--NAVBAR END-->
+
+<!--JUMBOTRON-->
+<div class="container">
+    <div class="d-none d-sm-block jumbotron jumbotron-fluid ">
+        <div id="#bootstrap-overrides" class="jumbotron-container">
+            <h1 class="display-4">Welcome to Pizza World</h1>
+        </div>
+    </div>
+    <h2>Build your own pizza!</h2>
+    <!--START TABS-->
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active"  href="#"><span class="badge badge-pill badge-secondary">1</span> Size and crust</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">2</span> Cheese and sauce</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">3</span> Toppings</a>
+        </li>
+    </ul>
+    <!--END TABS-->
+
+<!--START CARD TAB 1-->
+    <div class="card">
+        <div class="card-header">
+            Choose size and crust
+        </div>
+        <div class="card-body">
+            <div class="card w-100" style="width: 18rem;">
+                <div class="card-header">
+                    Hand tossed
+                </div>
+                <ul class="list-group list-group-flush">
+
+                    <li  class="list-group-item " >Garlic seasoned crust with a rich buttery taste</li>
+
+                    <li  class="list-group-item">Small (10")</li>
+
+                    <li class="list-group-item">Medium (12")</li>
+                </ul>
+            </div>
+            <div class="card-footer text-right">
+            <a href="#" class="btn btn-primary">Next step</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

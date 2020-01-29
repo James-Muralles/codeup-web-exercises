@@ -19,9 +19,7 @@ body {
     grid-template-columns: 20% 0fr 80%;
     /*grid-template-rows: repeat(4, 600px);*/
     height: 100vh;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-
+    grid-gap: 10px;
 }
 #main-header {
     /*grid-area: 1 / 1/ 2 /span 8;*/

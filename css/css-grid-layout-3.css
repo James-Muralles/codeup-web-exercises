@@ -20,8 +20,7 @@ body {
     grid-template-columns: 25% 25% 25% 25%;
     /*grid-template-rows: repeat(4, 600px);*/
     height: 100vh;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    grid-gap: 10px;
 }
 
 #box-juan {
@@ -62,5 +61,4 @@ div {
     /*font-weight: bold;*/
     color: white;
     font-size: 42pt;
-    font-family: "Times New Roman";
 }
