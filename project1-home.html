@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/068546a344.js"></script>
+
+
+    <title>Codeup Design Project</title>
+
+    <style>
+        body {
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: 'Abel', sans-serif;
+            margin: 0;
+
+
+        }
+
+        h1 {
+            font-family: 'Anton', sans-serif;
+            font-size: 64px;
+        }
+
+        h2 {
+            font-family: 'Anton', sans-serif;
+            font-size: 48px;
+        }
+        .rounded-circle {
+            height: calc(105px + .5em);
+            width: calc(105px + .5em);
+            margin: 0 auto;
+            line-height: calc(105px - .5em);
+            align-items: center;
+            font-family: 'Anton', sans-serif;
+            border: .5em solid white;
+        }
+        .main-red_button {
+            background-color: #E6563B;
+        }
+        .main-yellow_button {
+            background-color: #EB9D3A;
+        }
+        .main-green_button {
+            background-color: #7CB06C;
+        }
+        .main-blue_button {
+            background-color: #00ABA9;
+        }
+        .section-line-height {
+            line-height: 5em;
+        }
+        .image-list {
+            border: solid .2em #e6e6e6;
+            border-radius: 2%;
+            width: 100%;
+            height: auto
+        }
+        .side_images {
+            border: solid .2em #e6e6e6;
+        }
+        .small-circle {
+            height: 18px;
+            width: 18px;
+            border: 0;
+            line-height: 18px;
+            display: inline-block;
+            margin: 5px;
+        }
+        .small-red {
+            background-color: #E6563B;
+        }
+        .small-yellow {
+            background-color: #EB9D3A;
+        }
+        .small-green {
+            background-color: #7CB06C;
+        }
+        .small-blue {
+            background-color: #00ABA9;
+        }
+        .icons {
+            float: right;
+        }
+        .items {
+            display: inline-block;
+            margin: 1em 1em;
+        }
+        #logo {
+            height: calc(105px + .5em);
+            width: calc(105px + .5em);
+            margin: 0 auto;
+            line-height: calc(105px - .5em);
+        }
+        #logo2 {
+            height: calc(105px + .5em);
+            width: calc(105px + .5em);
+            margin: 0 auto;
+            line-height: calc(105px - .5em);
+
+        }
+        #logo3 {
+            height: calc(105px + .5em);
+            width: calc(105px + .5em);
+            margin: 0 auto;
+            line-height: calc(105px - .5em);
+        }
+        p {
+            font-size: 46px;
+        }
+        #selected_work_row {
+            line-height: 6em;
+        }
+        .card-body {
+            background-color: #f0f0f0;
+            padding: 0;
+        }
+        .card-body img {
+            height: 50px;
+            width: 60px;
+            margin-left: 4px;
+        }
+        .card-text {
+            font-size: 1.1em;
+            height: 48px;
+        }
+        .card {
+            border-color: #f0f0f0;
+        }
+        .row {
+            background-color: #f0f0f0;
+        }
+        h5 {
+            font-family: 'Anton', sans-serif;
+        }
+        .col-md-4 {
+            background-color: #f0f0f0;
+        }
+        #twitter_icon {
+            text-decoration: none;
+            background-color: #f0f0f0;
+        }
+        #twitter_row {
+            background-color: #f0f0f0;
+        }
+        #twitter_row span {
+            color: black;
+            font-family: 'Abel', sans-serif;
+            margin-left: 1em;
+        }
+
+
+        .small {
+            display: none;
+        }
+        span {
+            margin: 0 1.2em;
+            font-size: 16px;
+        }
+        #design-sm {
+            font-size: 20px;
+        }
+        .medium {
+            display: none;
+        }
+        .white-nav {
+            background: white;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px 0 0 0;
+        }
+        .white-nav2 {
+            background: white;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 75px;
+        }
+        .white-nav3 {
+            background: white;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+        /*.hide_xs {*/
+        /*    display: none;*/
+        /*}*/
+
+        /*//  small devices (portrait phones, under 576px)*/
+        @media (min-width: 576px) {
+            .extra_small {
+                display: none;
+            }
+            .small {
+                display: block;
+            }
+            span {
+                margin: 0 1.2em;
+                font-size: 16px;
+            }
+            #design-sm {
+                font-size: 20px;
+                font-family: 'Abel', sans-serif;
+                line-height: 3em;
+            }
+            h1 {
+                font-size: 50px;
+            }
+            h2  {
+                font-size: 32px;
+            }
+            .medium {
+                display: none;
+            }
+            #design-sm {
+                font-size: 36px;
+            }
+            .hide_small {
+                display: none;
+            }
+            body {
+                margin-top:3em ;
+            }
+
+        }
+        /*// medium devices (landscape phones, 768px and up)*/
+        @media (min-width: 768px) {
+            .small {
+                display: none;
+            }
+            .medium {
+                display: block;
+            }
+            ul {
+                list-style: none;
+                padding: 0;
+            }
+            .md-nav li:nth-child(2) {
+                font-size: 170%;
+            }
+            .right-nav-items {
+                margin-left: 2em;
+            }
+            #services-md {
+                margin-left: 150px;
+            }
+
+            /*.md-nav li:nth-child(3) {*/
+            /*    padding-left: 30%;*/
+            /*}*/
+            /*.md-nav li:nth-child(n+3) {*/
+            /*    margin: 0 .6em;*/
+            /*    font-size: 14px;*/
+            /*}*/
+
+
+            /*// large devices (landscape phones, 922px and up)*/
+            @media (min-width: 922px) {
+                .small {
+                    display: none;
+                }
+
+                .medium {
+                    display: block;
+                }
+
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+                }
+
+                .md-nav li:nth-child(2) {
+                    font-size: 170%;
+                }
+
+                /*.md-nav li:nth-child(3) {*/
+                /*    padding-left: 30%;*/
+                /*}*/
+
+                /*.md-nav li:nth-child(n+3) {*/
+                /*    margin: 0 .6em;*/
+                /*    font-size: 14px;*/
+                }
+                /*body {*/
+                /*    margin: 2% 12%;*/
+                }
+
+                .container-2 {
+                    margin: 2% 12%;
+
+
+            }
+
+            /*// x-large devices (landscape phones, 1200px and up)*/
+            @media (min-width: 1200px) {
+                .small {
+                    display: none;
+                }
+
+                .medium {
+                    display: block;
+                }
+
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+                }
+
+                .md-nav li:nth-child(2) {
+                    font-size: 170%;
+                }
+
+                /*.md-nav li:nth-child(3) {*/
+                /*    padding-left: 30%;*/
+                /*}*/
+
+                /*.md-nav li:nth-child(n+3) {*/
+                /*    margin: 0 .6em;*/
+                /*    font-size: 14px;*/
+                /*}*/
+                .container-2 {
+                    margin: 4% 14%;
+                }
+
+
+            }
+
+    </style>
+
+    <!---------------------CONTAINER: START------------------------------------------->
+<body>
+
+<div class="container text-center col-12 ">
+
+    <!---------------------NAVBAR: START------------------------------------------->
+    <!---------------------NAVBAR EXTRA-SMALL: START------------------------------------------->
+
+    <div class="row extra_small" id="navbar-row">
+        <div class="col-12 text-center white-nav">
+        <img src="img/logo.png" alt="#" id="logo"/>
+        </div>
+    </div>
+
+    <div class="text-center extra_small mt-4">
+        <p>codeup design</p>
+    </div>
+
+    <div class="text-center extra_small">
+        <div class="items">
+            SERVICES
+        </div>
+        <div class="items">
+            WORK
+        </div>
+        <div class="items">
+            BLOG
+        </div>
+        <div class="items">
+            CONTACT
+        </div>
+    </div>
+    <!---------------------NAVBAR EXTRA-SMALL: END------------------------------------------->
+    <!---------------------NAVBAR SMALL: START------------------------------------------->
+    <div class="row small">
+        <div class="nav-sm-items m-auto small">
+
+            <div class="white-nav2"><span class="services">SERVICES</span><span>WORK</span>
+                <span><img src="img/logo.png" alt="#" id="logo2"/></span><span>BLOG</span><span>CONTACT</span>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="col-sm-12 small mt-3" id="design-sm">codeup design</div>
+</div>
+
+<!---------------------NAVBAR SMALL: END------------------------------------------->
+
+<!---------------------NAVBAR MEDIUM: START------------------------------------------->
+<div class="row medium">
+    <div class="nav-md-items m-auto ">
+        <ul class="d-flex align-items-center md-nav white-nav3">
+            <li>
+                <img src="img/logo.png" alt="#" id="logo3"/>
+            </li>
+            <li>
+                codeup design
+            </li>
+
+
+            <li class="right-nav-items" id="services-md">
+                SERVICES
+            </li>
+            <li class="right-nav-items">
+                WORK
+            </li>
+            <li class="right-nav-items">
+                BLOG
+            </li>
+            <li class="right-nav-items">
+                CONTACT
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<!---------------------NAVBAR MEDIUM: END------------------------------------------->
+<!---------------------NAVBAR: END------------------------------------------->
+
+<!---------------------HEADER: START------------------------------------------->
+<div class="row text-center" id="header-row">
+    <div class="col-12" id="header">
+        <h1 class="mt-4">VISUAL DESIGN & WEB DEVELOPMENT</h1>
+        <div class="mt-5">
+            <h2>FROM PARK CITY, UTAH</h2>
+        </div>
+    </div>
+</div>
+<!---------------------HEADER: END------------------------------------------->
+
+<!---------------------BUTTON ROW: START------------------------------------------->
+<div class="container-2">
+<div class="row py-2 justify-content-center mt-5 pb-5">
+
+
+    <div class="text-white text-center col-6 col-sm-auto p-0">
+        <div class="my-auto rounded-circle main-red_button ">
+            DESIGN
+        </div>
+    </div>
+
+
+    <div class="text-white text-center col-6 col-sm-auto p-0">
+        <div class="my-auto rounded-circle main-yellow_button ">
+            DEVELOP
+        </div>
+    </div>
+
+    <div class="text-white text-center col-6 col-sm-auto p-0">
+        <div class="my-auto rounded-circle main-green_button ">
+            SUPPORT
+        </div>
+    </div>
+
+    <div class="text-white text-center col-6 col-sm-auto p-0">
+        <div class="my-auto rounded-circle main-blue_button ">
+            HOST
+        </div>
+    </div>
+
+</div>
+<!---------------------BUTTON: END------------------------------------------->
+<hr>
+<!---------------------SELECTED WORK ROW: START------------------------------------------->
+<div class="row" id="selected_work_row">
+    <div class="col-8 text-left">
+        SELECTED WORK
+    </div>
+
+    <div class="col-4 text-left px-0 hide_xs hide_small">
+        THE LAST
+    </div>
+</div>
+<!---------------------SELECTED WORK ROW: END------------------------------------------->
+
+<!---------------------IMAGES ROW: START------------------------------------------->
+<div class="row">
+    <div class="col-md-8">
+        <div class="row">
+
+            <div class="col-12 col-sm-6">
+                <img src="img/apple-ipad.jpg" alt="" class="image-list">
+                <div class=" mt-1 text-left ">
+                    Featured project
+                    <div class="icons">
+                        <div class="small-circle rounded-circle text-center small-red">
+                            D
+                        </div>
+                        <div class="small-circle rounded-circle text-center small-yellow">
+                            D
+                        </div>
+                        <div class="small-circle rounded-circle text-center small-green">
+                            S
+                        </div>
+                        <div class="small-circle rounded-circle text-center small-blue">
+                            H
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 hide_xs show-small">
+                <img src="img/macbook.jpg" alt="" class="image-list">
+                <div class=" mt-1 text-left ">
+                    Featured project
+                    <div class="icons">
+                        <div class="small-circle rounded-circle text-center small-red">
+                            D
+                        </div>
+                        <div class="small-circle rounded-circle text-center small-yellow">
+                            D
+                        </div>
+                        <div class="small-circle rounded-circle text-center small-green">
+                            S
+                        </div>
+                        <div class="small-circle rounded-circle text-center small-blue">
+                            H
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row hide_xs show-small">
+            <div class="col-sm-6">
+                <img src="img/man.jpg" alt="" class="image-list">
+                <div class=" mt-1 text-left ">
+                    Featured project
+                    <div class="icons">
+                        <div class="small-circle rounded-circle text-center small-red">
+                            D
+                        </div>
+                        <div class="small-circle rounded-circle text-center small-yellow">
+                            D
+                        </div>
+                        <div class="small-circle rounded-circle text-center small-green">
+                            S
+                        </div>
+                        <div class="small-circle rounded-circle text-center small-blue">
+                            H
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 show-small">
+                <img src="img/security.jpg" alt="" class="image-list">
+                <div class=" mt-1 text-left ">
+                    Featured project
+                    <div class="icons">
+                        <div class="small-circle rounded-circle text-center small-red">
+                            D
+                        </div>
+                        <div class="small-circle rounded-circle text-center small-yellow">
+                            D
+                        </div>
+                        <div class="small-circle rounded-circle text-center small-green">
+                            S
+                        </div>
+                        <div class="small-circle rounded-circle text-center small-blue">
+                            H
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!---------------------IMAGES ROW: END------------------------------------------->
+
+    <!---------------------SIDEBAR: START------------------------------------------->
+    <div class="col-md-4 hide_xs hide_small">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="img/mobile-phone.jpg" class="side_images" alt="#">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-text">THE ADMIN BAR AND ABSOLUTE POSITIONING</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="img/head.jpg" class="side_images" alt="#">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-text">NIBBLER AWESOME WEBSITE TESTING</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="img/ipad.jpg" class="side_images" alt="#">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-text">HOW TO GET GOOGLE TO LIKE YOU</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3">
+                        <div class="row no-gutters" id="twitter_row">
+                            <div class="col-md-auto">
+                                <section id="twitter_icon"><a href="#" target="_blank"><i class="fab fa-twitter"><span>LAST TWEET</span></i></a></section>
+                            </div>
+                            <div class="col-md-auto">
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Amet, iure laudantium nihil odit possimus quasi veritatis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!---------------------SIDEBAR: END------------------------------------------->
+
+                <!---------------------CONTAINER: END------------------------------------------->
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+</html>
