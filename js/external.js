@@ -50,8 +50,6 @@ var premium = prompt("Are you a premium member? yes/no");
  }
  else{
      alert('Sorry')
- }
-
 
 
 
