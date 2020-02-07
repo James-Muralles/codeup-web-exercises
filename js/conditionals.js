@@ -15,35 +15,34 @@
  *
  * Can you refactor your code to use functions?
  */
-function numberConfirm (number) {
-var confirmnumber = confirm("Would you like to enter a number?");
-if (confirmnumber === true) {
-    var numberentered = Number(prompt("Enter a number"));
+function numberConfirm(number) {
+    var confirmnumber = confirm("Would you like to enter a number?");
+    if (confirmnumber) {
+        var numberentered = Number(prompt("Enter a number"));
 
-    if (numberentered % 2) {
-        alert("That number is odd");
-    }
-    if ((numberentered % 2 === 0)) {
-        alert('That number is even')
-    }
-    if (numberentered > 0) {
-        alert("number is positive")
-    }
-    if (numberentered < 0) {
-        alert("number is negative")
-    }
-    if (!isNaN(numberentered)) {
-        alert("This number plus 100 is " + (Number(100) + numberentered));
-    } else if (isNaN(numberentered)) {
-        alert("Is not a number");
+        if (numberentered % 2) {
+            alert("That number is odd");
+        } else {
+            alert('That number is even')
+        }
+        if (numberentered > 0) {
+            alert("number is positive")
+        } else {
+            alert("number is negative")
+        }
+        if (!isNaN(numberentered)) {
+            alert("This number plus 100 is " + (Number(100) + numberentered));
+        } else if (isNaN(numberentered)) {
+            alert("Is not a number");
 
+        }
     }
-}
-return number;
+    return numberentered;
 
 }
 
-console.log(numberConfirm(23));
+console.log(numberConfirm());
+
 /* ########################################################################## */
 
 /**
@@ -63,20 +62,18 @@ console.log(numberConfirm(23));
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-function analyzeColor (color) {
-   if (color === 'blue') {
-       return 'blue is the color of the sky'
-   }
-   if (color === 'red') {
-       return 'strawberries are red'
-   }
-   if (color === 'cyan') {
-       return 'I dont know anything about cyan'
-   }
-   else {
-       return 'Do you even know colors?'
-   }
+function analyzeColor(color) {
+    if (color === 'blue') {
+        return 'blue is the color of the sky'
+    } else if (color === 'red') {
+        return 'strawberries are red'
+    } else if (color === 'cyan') {
+        return 'I dont know anything about cyan'
+    } else {
+        return 'Do you even know colors?'
+    }
 }
+
 console.log(analyzeColor('yellow'));
 
 // Don't change the next two lines!
@@ -92,29 +89,31 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 console.log(analyzeColor(randomColor));
+
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
-function analyzeColor () {
+function analyzeColorSwitch() {
     var color = prompt("choose a color");
     switch (color) {
-    case "blue":
-        alert ('blue is the color of the sky');
-        break;
-    case "red":
-        alert('strawberries are red');
-        break;
-    case "cyan":
-        alert ('I dont know anything about cyan');
-        break;
+        case "blue":
+            alert('blue is the color of the sky');
+            break;
+        case "red":
+            alert('strawberries are red');
+            break;
+        case "cyan":
+            alert('I dont know anything about cyan');
+            break;
         default:
-        alert ('Do you even know colors?');
-        break;
+            alert('Do you even know colors?');
+            break;
     }
     return color;
 }
-console.log(analyzeColor());
+
+console.log(analyzeColorSwitch());
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
@@ -162,36 +161,36 @@ console.log(analyzeColor());
 // }
 // console.log(calculateTotal(4, 20));
 
-function calculateTotal(luckyNumber, total){
+function calculateTotal(luckyNumber, total) {
     var discount;
-    switch (luckyNumber){
+    switch (luckyNumber) {
         case 0:
             alert("You get no discount");
             break;
         case 1:
-         discount = .1 * total;
-           alert ("10% off, your discount is $" + discount);
-          break;
+            discount = .1 * total;
+            alert("10% off, your discount is $" + discount);
+            break;
         case 2:
             discount = .25 * total;
-            alert ("25% off, your discount is $" + discount);
+            alert("25% off, your discount is $" + discount);
             break;
         case 3:
             discount = .35 * total;
-            alert ("35% off, your discount is $" + discount);
+            alert("35% off, your discount is $" + discount);
             break;
         case 4:
             discount = .5 * total;
-            alert ("50% off, your discount is $" + discount);
+            alert("50% off, your discount is $" + discount);
             break;
         case 5:
-            discount = .1 * total;
-            alert ("100% off, your discount is free.99");
+            discount = 1 * total;
+            alert("100% off, your discount is free.99");
             break;
         default:
             alert("This isn't real")
     }
-    return discount;
+    return total- (discount);
 }
 
 console.log(calculateTotal(2, 40));
@@ -204,38 +203,38 @@ console.log(calculateTotal(2, 40));
  */
 // Generate a random number between 0 and 6
 
-// function calculateTotal(){
-//     var discount;
-// var luckyNumber = Math.floor(Math.random() * 6);
-// var total = Number(prompt("Enter your bill total"))
-//     switch (luckyNumber){
-//         case 0:
-//             alert("You get no discount. Your bill is" + total);
-//             break;
-//         case 1:
-//             discount = .1 * total;
-//             alert ("10% off, your discount is $" + discount.toFixed(2) + ". Your lucky number was " + luckyNumber + ". Your bill was $" + total + ". Your bill after the discount is $" + (total-discount).toFixed(2));
-//             break;
-//         case 2:
-//             discount = .25 * total;
-//             alert ("25% off, your discount is $" + discount.toFixed(2) + ". Your lucky number was " + luckyNumber + ". Your bill was $" + total + ". Your bill after the discount is $" + (total-discount).toFixed(2));
-//             break;
-//         case 3:
-//             discount = .35 * total;
-//             alert ("35% off, your discount is $" + discount.toFixed(2) + ". Your lucky number was " + luckyNumber + ". Your bill was $" + total + ". Your bill after the discount is $" + (total-discount).toFixed(2));
-//             break;
-//         case 4:
-//             discount = .5 * total;
-//             alert ("50% off, your discount is $" + discount.toFixed(2) + ". Your lucky number was " + luckyNumber + ". Your bill was $" + total + ". Your bill after the discount is $" + (total-discount).toFixed(2));
-//             break;
-//         case 5:
-//             discount = total;
-//             alert ("100% off, your discount is $" + discount.toFixed(2) + ". Your lucky number was " + luckyNumber + ". Your bill was $" + total + ". Your bill after the discount is $" + (total-discount).toFixed(2));
-//             break;
-//         default:
-//             alert("This isn't real")
-//     }
-//     return discount.toFixed(2);
-// }
-//
-// console.log(calculateTotal());
+function calculateTotal2(){
+    var discount;
+var luckyNumber = Math.floor(Math.random() * 6);
+var total = Number(prompt("Enter your bill total"))
+    switch (luckyNumber){
+        case 0:
+            alert("You get no discount. Your bill is" + total);
+            break;
+        case 1:
+            discount = .1 * total;
+            alert ("10% off, your discount is $" + discount.toFixed(2) + ". Your lucky number was " + luckyNumber + ". Your bill was $" + total + ". Your bill after the discount is $" + (total-discount).toFixed(2));
+            break;
+        case 2:
+            discount = .25 * total;
+            alert ("25% off, your discount is $" + discount.toFixed(2) + ". Your lucky number was " + luckyNumber + ". Your bill was $" + total + ". Your bill after the discount is $" + (total-discount).toFixed(2));
+            break;
+        case 3:
+            discount = .35 * total;
+            alert ("35% off, your discount is $" + discount.toFixed(2) + ". Your lucky number was " + luckyNumber + ". Your bill was $" + total + ". Your bill after the discount is $" + (total-discount).toFixed(2));
+            break;
+        case 4:
+            discount = .5 * total;
+            alert ("50% off, your discount is $" + discount.toFixed(2) + ". Your lucky number was " + luckyNumber + ". Your bill was $" + total + ". Your bill after the discount is $" + (total-discount).toFixed(2));
+            break;
+        case 5:
+            discount = total;
+            alert ("100% off, your discount is $" + discount.toFixed(2) + ". Your lucky number was " + luckyNumber + ". Your bill was $" + total + ". Your bill after the discount is $" + (total-discount).toFixed(2));
+            break;
+        default:
+            alert("This isn't real")
+    }
+    return (total-discount).toFixed(2);
+}
+
+console.log(calculateTotal2());
