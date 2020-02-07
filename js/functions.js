@@ -19,7 +19,8 @@ console.log(sayHello("Jimmy"));
  *
  * console.log 'helloMessage' to check your work
  */
-// sayHello("Jimmy")
+var helloMessage = sayHello("Jimmy");
+console.log(sayHello());
 
 /**
  * TODO:
@@ -53,15 +54,10 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 function isTwo (number){
-    if (number === 2) {
-        return true;
-    }
-    else {
-        return false;
-    }
+    return number === 2;
 }
 
-console.log(isTwo(2));
+console.log(isTwo(random));
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -77,7 +73,7 @@ function calculateTip (x, y){
 
     return (x/100) * y;
 }
-console.log(calculateTip(.26, 20));
+console.log(calculateTip(20, 20));
 
 /**
  * TODO:
@@ -85,9 +81,9 @@ console.log(calculateTip(.26, 20));
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-var y = prompt("How much is your bill?" );
-var x = prompt("What perecent would you like to tip?");
-alert ("You should tip $" + calculateTip(x, y)) ;
+var bill = parseFloat(prompt("How much is your bill?" ));
+var tip = parseFloat(prompt("What perecent would you like to tip?"));
+alert ("You should tip $" + calculateTip(tip, bill).toFixed(2)) ;
 
 
 

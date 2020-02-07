@@ -48,8 +48,9 @@ var premium = prompt("Are you a premium member? yes/no");
  if (howmany > 2 && offer === "no" || premium === 'yes'){
      alert('You get the product offer!')
  }
- else{
-     alert('Sorry')
+ else {
+     alert('Sorry');
+ }
 
 
 
