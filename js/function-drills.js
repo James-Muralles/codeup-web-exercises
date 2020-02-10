@@ -62,9 +62,9 @@ console.log(isMultipleOfFIve(13));
 // function
 // Make a function named isTruthy(input), remember that values other than true will behave like true
 function isTruthy (input) {
-    return !!input === true;
+    return input == true;
 }
-console.log(isTruthy(0));
+console.log(isTruthy(false));
 
 // Make a function named isFalsy(input), remember that values other than false behave like false
 function isFalsy(input) {
@@ -89,13 +89,29 @@ function isCaptial (letter){
 }
 console.log(isCaptial("a"));
 // Make a function named isLowerCase(letter)
-// function
+function isLowerCase (letter) {
+    return letter === letter.toLowerCase()
+}
+
+console.log(isLowerCase('H'));
 // Make a function named hasLowerCase(string) that returns if a string has any lower cased letter
-// function
+function hasLowerCase (art) {
+    return art.toUpperCase() !== art
+}
+
+console.log(hasLowerCase("AJH"));
 // Make a function named isSpace(letter) that returns if a character is a space character
-// function
+function isSpace (char) {
+    return char === " "
+}
+
+console.log(isSpace(" "));
 // Make a function named isZero(number)
-// function
+function isZero (num) {
+    return num === 0;
+}
+
+console.log(isZero(1));
 // Make a function named notZero(input) that returns true if the input is not zero
 // function
 // Write a function named lowerCase(string)
@@ -119,3 +135,16 @@ console.log(triple(5));
 // Write a function named divide(a, b) that returns a divided by b
 // function
 // Write a function named remainder(a, b) that returns the remainder after dividing a by b
+
+function truthyOrfalsey (x) {
+    return x ? 1 : 0;
+}
+
+console.log(truthyOrfalsey(23));
+
+function toSeconds (hrs, mins) {
+    return ((hrs * 60) * 60) + (mins * 60);
+}
+
+console.log(toSeconds(1, 60));
+</script>
