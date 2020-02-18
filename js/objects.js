@@ -11,12 +11,18 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-    var person = {}
-    person.firstName = "Jimmy";
-    person.lastName = "Muralles";
-    person.sayHello = "Hello from " + person.firstName + " " + person.lastName;
+    var person = {
 
-    console.log(person.sayHello);
+        firstName: "Jimmy",
+        lastName: "Muralles"
+
+    }
+
+
+    person.sayHello = function () {
+        return "Hello from " + person.firstName + " " + person.lastName + "!"
+    }
+    console.log(person.sayHello());
 
     /**
      * TODO:
@@ -48,28 +54,37 @@
         {name: 'George', amount: 320}
     ];
 
-    function discount() {
-        var newPrice = 0;
-        var oldPrice;
-        for (var i = 0; i < shoppers.length; i++) {
-            var moneyOff = (shoppers[i].amount * .12)
-            if (shoppers[i].amount > 200) {
-                oldPrice = shoppers[i].amount;
-                newPrice = shoppers[i].amount - (moneyOff);
-                shoppers[i].amount = newPrice;
+//     function discount() {
+//         var newPrice = 0;
+//         var oldPrice;
+//         for (var i = 0; i < shoppers.length; i++) {
+//             var moneyOff = (shoppers[i].amount * .12)
+//             if (shoppers[i].amount > 200) {
+//                 oldPrice = shoppers[i].amount;
+//                 newPrice = shoppers[i].amount - (moneyOff);
+//                 shoppers[i].amount = newPrice;
+//
+//                 console.log("Original price: " + oldPrice + " " + shoppers[i].name + ' ' + "paid " + shoppers[i].amount + " with a discount of " + moneyOff)
+//
+//             } else {
+//                 console.log("Original price: " + shoppers[i].amount + " " + shoppers[i].name + " " + "paid " + shoppers[i].amount + " with no discount")
+//             }
+//         }
+// return moneyOff
+//
+//     }
+//     console.log(discount());
 
-                console.log("Original price: " + oldPrice + " " + shoppers[i].name + ' ' + "paid " + shoppers[i].amount + " with a discount of " + moneyOff)
-
+    function discountChecker(shoppers) {
+        shoppers.forEach(function (shopper) {
+            if (shopper.amount > 200) {
+                console.log("shopper " + shopper.name + " has earned 12 % off by having cart totalling " + shopper.amount.toFixed(2) + ". After the discount of $" + (shopper.amount * .12).toFixed(2) + " was applied, " + shopper.name + " owes " + "$" + (shopper.amount - (shopper.amount * .12)) + ".")
             } else {
-                console.log("Original price: " + shoppers[i].amount + " " + shoppers[i].name + " " + "paid " + shoppers[i].amount + " with no discount")
+                console.log("Original price: " + shopper.amount + " " + shopper.name + " " + "paid " + shopper.amount + " with no discount.")
             }
-        }
-return moneyOff
-
+        })
     }
-    console.log(discount());
-
-
+    discountChecker(shoppers);
 
 
     /** TODO:
@@ -164,10 +179,11 @@ return moneyOff
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-        var title = prompt("Enter book title: ");
-        var authorFirst = prompt("Enter book author first name: ");
-        var authorLast = prompt("Enter book author last name: ")
-    function createBook (){
+    var title = prompt("Enter book title: ");
+    var authorFirst = prompt("Enter book author first name: ");
+    var authorLast = prompt("Enter book author last name: ")
+
+    function createBook() {
         var bookArr = [
             {
                 title: title,
