@@ -38,6 +38,10 @@
         // TODO: Uncomment next line and get the main header element by id
         var mainHeader = document.getElementById("main-header");
 
+        document.getElementById("btn1").addEventListener("click", function () {
+            mainHeader.innerText = "JavaScript is cool"
+        });
+
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
         // mainHeader.innerHTML = "Javascript is cool";
 
@@ -83,11 +87,11 @@
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         subParagraphs[0].innerHTML = "Mission Accomplished!";
 
-       var listener = function (event) {
-           mainHeader.innerHTML = "Javascript is cool";
-       };
-        var btn1 = document.getElementById('btn1');
-        btn1.addEventListener('click', listener, false);
+       // var listener = function (event) {
+       //     mainHeader.innerHTML = "Javascript is cool";
+       // };
+       //  var btn1 = document.getElementById('btn1');
+       //  btn1.addEventListener('click', listener, false);
 
 
         var listener2 = function (event) {
