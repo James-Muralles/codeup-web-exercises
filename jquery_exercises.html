@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery</title>
+</head>
+<body>
+<h1 id="title">Jquery</h1>
+<div>
+    <ul class="list-items codeup" id=list">
+        <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto consequuntur dicta enim
+            expedita praesentium quos repellendus rerum, sapiente totam? Consequatur eligendi nam obcaecati quam
+            quisquam, rerum temporibus totam voluptatem?</p></li>
+        <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laboriosam laudantium magnam qui
+            quidem? Commodi culpa dolore neque pariatur perferendis sapiente voluptas? Magnam maiores minus nostrum
+            officia quaerat quia rerum.</p></li>
+        <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum natus, odit. Dolorem esse et ipsa ipsam
+            iste modi, mollitia praesentium, quis quisquam quos, repudiandae saepe. Beatae iure rem ullam
+            voluptates?</p></li>
+    </ul>
+
+    <div  id="yes">
+        <h1 class="header id="codeup">YES!!!</h1>
+    </div>
+
+    <div>
+        <p  class="numbers codeup" id="num">1,2,3,4,5,6</p>
+    </div>
+
+    <div>
+        <h1 class="other-numbers" id="one">7,8,9,0</h1>
+    </div>
+</div>
+<script src="js/jquery-2.2.4.js"></script>
+<script type="text/javascript">
+    "use strict";
+
+    $(document).ready(function () {
+        alert("the DOM has finished loading");
+
+            alert($('#yes').html());
+
+            $("#list").bind('click', function () {
+                alert($(this).attr("#list").html());
+            });
+
+            alert($('#num').html());
+
+            $('.codeup').css('border', '1px solid red');
+
+        $('li').css('font-size', '30px');
+        $('h1, p, li').css('background', 'yellow');
+        alert($('h1').html());
+
+    });
+</script>
+
+</body>
+</html>
