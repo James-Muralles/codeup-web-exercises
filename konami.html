@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konami Cheat Code</title>
+</head>
+<body>
+<!--<img src="img/metal-gear.jpg" alt="" id="pic">-->
+<h1>Konami Cheat Code</h1>
+<script src="js/jquery-2.2.4.js"></script>
+<script type="text/javascript">
+    "use strict";
+
+    var count = 0;
+    var count2= 0;
+    var code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+    var code2 = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 38];
+    $(document).keyup(function (event) {
+        var keyPressed = event.keyCode;
+        if (keyPressed === code[count]) {
+            count++;
+            if (count === code.length) {
+                $('body').css('background-image', 'url("img/metal-gear.jpg")');
+                $("<audio></audio>").attr({
+                    'src': 'img/game-over.mp3',
+                    'volume': 0.4,
+                    'autoplay': 'autoplay'
+                }).appendTo("body");
+                count = 0;
+            }
+
+        }
+        $('h1').dblclick(function () {
+        $('body').html('', 'url("img/city.jpeg")');
+        });
+    });
+    $(document).keyup(function (event) {
+        var keyPressed = event.keyCode;
+        if (keyPressed === code2[count]) {
+            count++;
+            if (count === code2.length) {
+                $('body').css('background-image', 'url("img/city.jpeg")');
+                $("<audio></audio>").attr({
+                    'src': 'img/game-over.mp3',
+                    'volume': 0.4,
+                    'autoplay': 'autoplay'
+                }).appendTo("body");
+
+            }
+
+        }
+
+    });
+
+
+
+    //     var konami = function() {
+    //         var konamikeys = [38,38,40,40,37,39,37,39,66,65],
+    //             started = false,
+    //             count = 0;
+    //
+    //         $(document).keydown(function(e){
+    //             var reset = function() {
+    //                 started = false;
+    //                 count = 0;
+    //             };
+    //
+    //            var key = e.keyCode;
+    //
+    //             // Begin watching if first key in sequence was pressed.
+    //             if(!started){
+    //                 if(key == 38){
+    //                     started = true;
+    //                 }
+    //             }
+    //
+    //             // If we've started, pay attention to key presses, looking for right sequence.
+    //             if (started){
+    //
+    //                 if (konamikeys[count] == key){
+    //                     count++;
+    //                 } else {
+    //                     // Incorrect key, restart.
+    //                     reset();
+    //                 }
+    //                 if (count == 10){
+    //                     // Success!
+    //                     $('body').css('background-image', 'url("img/metal-gear.jpg")');
+    //                                 $("<audio></audio>").attr({
+    //                                     'src': 'img/game-over.mp3',
+    //                                     'volume': 0.4,
+    //                                     'autoplay': 'autoplay'
+    //                                 }).appendTo("body");
+    //
+    //                     reset();
+    //                 }
+    //             } else {
+    //                 reset();
+    //             }
+    //         });
+    //     };
+    // konami();
+
+    function refresh() {
+        $.ajax({
+            url: 'http://localhost:63342/codeup-web-exercises/konami.html?_ijt=tdha400va052pc07bfoam8khc4',
+            success: function(data) {
+                $('#container').html(data).delay(2000);
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
+
+
+<!--make variable equal to the code sequence >> var code = [38, 38, 40,  40, 37, 39, 37, 39, 66, 65, 13]
+set keys press to var keyPressed = event.keycode
+make a bucket to store if correct keys were pressed
+loop though the array to check if keyPressed = code[i]
+if keyPressed === code[i]>>>> bucket.push(code[i])
+if firstkeyPressed does not equal code[0] then reset
+else continue through the loop
+if bucket = code >>>> alert 'yay!'

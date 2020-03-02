@@ -5,6 +5,7 @@
     <title>Jquery</title>
 </head>
 <body>
+<button id="btn">click me</button>
 <h1 id="title">Jquery</h1>
 <div>
     <ul class="list-items codeup" id=list">
@@ -20,7 +21,7 @@
     </ul>
 
     <div  id="yes">
-        <h1 class="header id="codeup">YES!!!</h1>
+        <h1 class="header" id="codeup">YES!!!</h1>
     </div>
 
     <div>
@@ -51,6 +52,32 @@
         $('li').css('font-size', '30px');
         $('h1, p, li').css('background', 'yellow');
         alert($('h1').html());
+
+        $('h1').click(function () {
+$(this).css('background', 'blue');
+        });
+
+        $('p').dblclick(function () {
+            $(this).css('font-size', '18px');
+        });
+
+
+        $('li').hover(
+            function () {
+            $(this).css('color', 'red');
+        },
+            function () {
+                $(this).css('color', 'black');
+            });
+
+        $( "li" ).hover(function() {
+            $( this ).fadeOut( 100 );
+            $( this ).fadeIn( 500 );
+            $('btn').click(function() {
+                $(this).off('hover')
+            });
+        });
+
 
     });
 </script>
