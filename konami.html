@@ -28,29 +28,25 @@
                 }).appendTo("body");
                 count = 0;
             }
-
         }
-        $('h1').dblclick(function () {
-        $('body').html('', 'url("img/city.jpeg")');
-        });
     });
-    $(document).keyup(function (event) {
-        var keyPressed = event.keyCode;
-        if (keyPressed === code2[count]) {
-            count++;
-            if (count === code2.length) {
-                $('body').css('background-image', 'url("img/city.jpeg")');
-                $("<audio></audio>").attr({
-                    'src': 'img/game-over.mp3',
-                    'volume': 0.4,
-                    'autoplay': 'autoplay'
-                }).appendTo("body");
+    // $(document).keyup(function (event) {
+    //     var keyPressed = event.keyCode;
+    //     if (keyPressed === code2[count]) {
+    //         count++;
+    //         if (count === code2.length) {
+    //             $('body').css('background-image', 'url("img/city.jpeg")');
+    //             $("<audio></audio>").attr({
+    //                 'src': 'img/game-over.mp3',
+    //                 'volume': 0.4,
+    //                 'autoplay': 'autoplay'
+    //             }).appendTo("body");
+    //
+    //         }
+    //
+    //     }
 
-            }
-
-        }
-
-    });
+    // });
 
 
 

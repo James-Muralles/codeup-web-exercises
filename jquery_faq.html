@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery Faq</title>
+    <style type="text/css">
+        .invisible {
+            visibility: hidden;
+        }
+
+        .highlight {
+            background: yellow;
+        }
+
+        body {
+            cursor: default;
+        }
+    </style>
+</head>
+<body>
+<dl>
+    <dt>60 Hot Springs</dt>
+    <dd class="invisible">The springs are not cold.</dd>
+    <dt>Pinnacles</dt>
+    <dd class="invisible">The two sides of the park do not connect.</dd>
+    <dt>Cuyahoga Valley</dt>
+    <dd class="invisible">Has a vary nice waterfall.</dd>
+    <dt>Congaree</dt>
+    <dd class="invisible">A big swamp with many mosquitos.</dd>
+    <dt>Gateway Arch</dt>
+    <dd class="invisible">Recetly became a national park.</dd>
+    <dt>Mammoth Cave</dt>
+    <dd class="invisible">Has many caves to see.</dd>
+    <dt>Biscayne</dt>
+    <dd class="invisible">Acoording to a guys person that traveled there, it is a 'weird park'.</dd>
+    <dt>Voyageurs</dt>
+    <dd class="invisible">You can go on a house boat at this park.</dd>
+    <dt>Wind Cave</dt>
+    <dd class="invisible">The park has buffalo and other animals</dd>
+    <dt>American Samoa</dt>
+    <dd class="invisible">This park is spread over a few islands.</dd>
+
+    <div class="toggle">
+        <button class="btn" id="toggle"></button>
+    </div>
+</dl>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script type="text/javascript">
+//makes the definitions appear and disappear
+    $('#toggle').click(function () {
+        $('dd').toggleClass('invisible');
+    });
+
+ //makes pointer appear when hovering over the dt's
+$('dt').hover(function () {
+    $(this).css("cursor", 'pointer');
+
+    });
+
+
+//function that highlights the clicked dt
+    function highlight() {
+        $("dt").click(function () {
+            $(this).toggleClass("highlight");
+        });
+
+    }
+
+    highlight()
+
+
+</script>
+</body>
+</html>
