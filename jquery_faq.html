@@ -18,6 +18,21 @@
         body {
             cursor: default;
         }
+        .frame {
+            height: 300px;
+            width: 300px;
+            border: saddlebrown 5px solid;
+            display: inline-block;
+            margin: 20px;
+        }
+        .frames {
+            display:flex;justify-content:center;align-items:center;
+
+        }
+        img {
+            height: 300px;
+            width: 300px;
+        }
     </style>
 </head>
 <body>
@@ -43,26 +58,71 @@
     <dt>American Samoa</dt>
     <dd class="invisible">This park is spread over a few islands.</dd>
 
-    <div class="toggle">
+    <div class="button">
         <button class="btn" id="toggle"></button>
     </div>
 </dl>
 
+<div class="frames">
+
+<div class="frame" id="frame-1">
+    <img src="img/animal1.jpg" alt="" id="animal-1">
+    <button id="swap-1"></button>
+</div>
+
+    <div class="frame" id="frame-2">
+    <img src="img/animal2.jpg" alt="" id="animal-2">
+    <button id="swap-2"></button>
+</div>
+
+    <div class="frame" id="frame-3">
+    <img src="img/animal3.jpg" alt="" id="animal-3">
+<button id="swap-3"></button>
+</div>
+
+</div>
+
+    <h1>National Park</h1>
+<ul class="list">
+    <li>fact 1</li>
+    <li>fact 2</li>
+    <li>fact 3</li>
+    <li>fact 4</li>
+</ul>
+    <h1>National Park</h1>
+<ul class="list">
+    <li>fact 1</li>
+    <li>fact 2</li>
+    <li>fact 3</li>
+    <li>fact 4</li>
+</ul>
+    <h1>National Park</h1>
+<ul class="list">
+    <li>fact 1</li>
+    <li>fact 2</li>
+    <li>fact 3</li>
+    <li>fact 4</li>
+</ul>
+
+<div class="button">
+    <button class="btn" id="toggle-2"></button>
+</div>
+
 <script src="js/jquery-2.2.4.js"></script>
 <script type="text/javascript">
-//makes the definitions appear and disappear
+    //makes the definitions appear and disappear
     $('#toggle').click(function () {
         $('dd').toggleClass('invisible');
     });
 
- //makes pointer appear when hovering over the dt's
-$('dt').hover(function () {
-    $(this).css("cursor", 'pointer');
+    //makes pointer appear when hovering over the dt's
+    $('dt').hover(function () {
+        $(this).css("cursor", 'pointer');
 
     });
 
 
-//function that highlights the clicked dt
+    //function that highlights the clicked dt
     function highlight() {
         $("dt").click(function () {
             $(this).toggleClass("highlight");
@@ -71,6 +131,37 @@ $('dt').hover(function () {
     }
 
     highlight()
+    //last item in last has a yellow background
+    $('#toggle-2').click(function () {
+        $('ul').each(function (index) {
+            $(this).children().last().css('background', 'yellow')
+        });
+    });
+
+    //click h1 to turn all list items bold
+        $("h1").click(function () {
+            $(this).next().children().css('font-weight', 'bold');
+    });
+//click li to turn first li in each ul blue
+            $("li").click(function () {
+                $('ul').each(function (index) {
+                    $(this).children().first().css('color', 'blue');
+                });
+            });
+
+            //click on first button to swap first was last image
+    var firstImg;
+    var secondImg;
+    var thirdImg;
+    $("#swap-1").click(function(){
+$('#animal-1').attr('src', 'img/animal3.jpg')
+    });
+
+    function getImg() {
+        return $('#frame-1').html();
+    }
+
+    console.log(getImg());
 
 
 </script>
