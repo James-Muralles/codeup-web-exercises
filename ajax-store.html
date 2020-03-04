@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Online Store</title>
+
+
+    <style>
+        /*body {*/
+        /*    background-image: url("img/oldwest.jpg");*/
+        /*    background-size: cover;*/
+        /*}*/
+        /* .jumbotron {*/
+        /*     background-image: url("img/trail.jpg");*/
+        /*     background-size: cover;*/
+        /*     background-position: center;*/
+
+        /*     height: 800px*/
+
+        /* }*/
+        input {
+            width: 30px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<!--jumbotron-->
+
+<!--<div class="d-none d-sm-block jumbotron jumbotron-fluid m-0" id="main-jumbotron">-->
+<!--    <div  class="jumbotron-container">-->
+<!--        <h1 class="display-4" id="jumbo-header">Old Fashioned Tools</h1>-->
+<!--    </div>-->
+<!--</div>-->
+
+<div class="container">
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+
+    <table id="products" class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col" class="">Tool</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Categories</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody id="insertProducts"></tbody>
+    </table>
+
+
+    <button type="button" class=" reload btn-dark btn-sm">refresh inventory</button>
+
+    <!--cart card-->
+    <div class="card m-auto" style="width: 18rem;">
+        <div class="card-body ">
+            <h5 class="card-title ">My Cart</h5>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        "use strict";
+        // TODO: Create an ajax GET request for /data/inventory.json
+//    var inventory = $.get('data/inventory.json').done(function(info) {
+//        console.log(info);
+//        $('#insertProducts').append(info);
+// info.forEach(function (item) {
+//     tr.append('<td>' + item.title +'</td>);
+//     $('#products').append('<tr><td>' + item.quantity +  '</td>></tr>')
+// });
+
+        function getInventory() {
+            $.ajax('data/inventory.json').done(function (data) {
+                data.forEach(function (item) {
+                    $('#insertProducts').append(
+                        '<tr>' +
+                        '<th>' + item.title + '</th>' +
+                        '<th>' + '<input class="buy" type="text">' + '</th>' +
+                        '<th>' + item.price + '</th>' +
+                        '<th>' + item.categories + '</th>' +
+                        '<th>' + '<button type="button" id="buy-btn" class="btn btn-secondary btn-sm">Buy</button>' + '</th>' +
+                        '</tr>'
+                    )
+                });
+
+            });
+        }
+
+        getInventory();
+// //update data table
+        $(".reload").click(function () {
+            $('#insertProducts').html(null);
+            getInventory();
+
+        });
+
+
+        // TODO: Take the data from inventory.json and append it to the products table
+        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+        //             its contents and fields
+        //       HINT: You will want to target #insertProducts for your new HTML elements
+
+    });
+
+</script>
+
+
+</body>
+</html>

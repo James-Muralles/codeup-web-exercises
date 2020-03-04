@@ -1,12 +1,12 @@
-.jumbotron{
-    /*width: 100%;*/
-    /*display: flex;*/
-    /*filter: brightness(160%);*/
-    background-image:  url("../img/pizza.png");
-    background-size: cover;
-    background-position: center;
-    margin-top: 20px;
-}
+/*.jumbotron{*/
+/*    !*width: 100%;*!*/
+/*    !*display: flex;*!*/
+/*    !*filter: brightness(160%);*!*/
+/*    background-image:  url("../img/pizza.png");*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*    margin-top: 20px;*/
+/*}*/
 h1 {
     background-color: #F9F9F9;
     opacity: 0.5;

@@ -1,0 +1,42 @@
+[
+    {
+        "title": "Hammer",
+        "quantity": 25,
+        "categories": [
+            "tool"
+        ],
+        "price": 20
+    }, {
+        "title": "Wagon Wheel",
+        "quantity": 5,
+        "categories": [
+            "wagon accessories "
+
+        ],
+        "price": 100
+    }, {
+        "title": "Amputation kit",
+        "quantity": 5,
+        "categories": [
+            "tool",
+            "war/accidents"
+        ],
+        "price": 200
+    }, {
+        "title": "Shovel",
+        "quantity": 25,
+        "categories": [
+            "tool"
+        ],
+        "price": 10
+    },
+    {
+        "title": "Anvil",
+        "quantity": 5,
+        "categories": [
+            "tool",
+            "forging"
+        ],
+        "price": 30
+    }
+]
