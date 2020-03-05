@@ -29,56 +29,67 @@
     </div>
 
     <div>
-        <h1 class="other-numbers" id="one">7,8,9,0</h1>
+        <h1 class=" codeup other-numbers" id="one">7,8,9,0</h1>
     </div>
 </div>
 <script src="js/jquery-2.2.4.js"></script>
 <script type="text/javascript">
     "use strict";
 
-    $(document).ready(function () {
-        alert("the DOM has finished loading");
+    // $(document).ready(function () {
+    //     alert("the DOM has finished loading");
 
-            alert($('#yes').html());
+//             alert($('#yes').html());
+//
+//             $("#list").bind('click', function () {
+//                 alert($(this).attr("#list").html());
+//             });
+//
+//             alert($('#num').html());
+//
+//             $('.codeup').css('border', '1px solid red');
+//
+//         $('li').css('font-size', '30px');
+//         $('h1, p, li').css('background', 'yellow');
+//         alert($('h1').html());
+//
+//         $('h1').click(function () {
+// $(this).css('background', 'blue');
+//         });
+//
+//         $('p').dblclick(function () {
+//             $(this).css('font-size', '18px');
+//         });
+//
+//
+//         $('li').hover(
+//             function () {
+//             $(this).css('color', 'red');
+//         },
+//             function () {
+//                 $(this).css('color', 'black');
+//             });
+//
+//         $( "li" ).hover(function() {
+//             $( this ).fadeOut( 100 );
+//             $( this ).fadeIn( 500 );
+//             $('btn').click(function() {
+//                 $(this).off('hover')
+//             });
+//         });
+//
 
-            $("#list").bind('click', function () {
-                alert($(this).attr("#list").html());
-            });
+    // });
 
-            alert($('#num').html());
-
-            $('.codeup').css('border', '1px solid red');
-
-        $('li').css('font-size', '30px');
-        $('h1, p, li').css('background', 'yellow');
-        alert($('h1').html());
-
-        $('h1').click(function () {
-$(this).css('background', 'blue');
-        });
-
-        $('p').dblclick(function () {
-            $(this).css('font-size', '18px');
-        });
-
-
-        $('li').hover(
-            function () {
-            $(this).css('color', 'red');
-        },
-            function () {
-                $(this).css('color', 'black');
-            });
-
-        $( "li" ).hover(function() {
-            $( this ).fadeOut( 100 );
-            $( this ).fadeIn( 500 );
-            $('btn').click(function() {
-                $(this).off('hover')
-            });
-        });
-
-
+    $(document).ready(function() {
+        $('#codeup').hover(
+            function() {
+                $(this).css('background-color', '#FF0');
+            },
+            function() {
+                $(this).css('background-color', '#FFF');
+            }
+        );
     });
 </script>
 

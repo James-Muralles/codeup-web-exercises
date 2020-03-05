@@ -115,19 +115,21 @@
 
         function getInventory() {
             $.ajax('data/inventory.json').done(function (data) {
-                data.forEach(function (item) {
+                data.forEach(function (item, index) {
                     $('#insertProducts').append(
                         '<tr>' +
                         '<th>' + item.title + '</th>' +
                         '<th>' + '<input class="buy" type="text">' + '</th>' +
                         '<th>' + item.price + '</th>' +
                         '<th>' + item.categories + '</th>' +
-                        '<th>' + '<button type="button" id="buy-btn" class="btn btn-secondary btn-sm">Buy</button>' + '</th>' +
+                        '<th>' + '<button type="button" data-id="'+ index+'" id="buy-btn-'+ index+'" class="buy-btn btn btn-secondary btn-sm">Buy</button>' + '</th>' +
                         '</tr>'
                     )
                 });
 
             });
+
+
         }
 
         getInventory();
