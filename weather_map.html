@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
+    <link
+            rel="stylesheet"
+            href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css"
+            type="text/css"
+    />
 
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.css' rel='stylesheet'/>
     <style>
@@ -18,26 +23,43 @@
 
         }
         body{
-            background:lightcyan;
+            /*background:royalblue;*/
+            background-image: url(img/photo-of-blue-sky-912110.jpg);
+        }
+        body h1{
+            color: #FFFFFF;
+            font-size: 24px;
+
         }
 
         #map {
             /* the width and height may be set to any size */
-            width: 800px;
-            height: 800px;
+            width: 80%;
+            height: 500px;
             border: black solid 5px;
-
-
-
 
         }
 
+        .coordinates {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            position: absolute;
+            bottom: 40px;
+            left: 10px;
+            padding: 5px 10px;
+            margin: 0;
+            font-size: 11px;
+            line-height: 18px;
+            border-radius: 3px;
+            display: none;
+        }
+
         .col-3 {
-            /*height: 300px;*/
-            /*width: 300px;*/
+            height: 220px;
+            width: 300px;
             border: black 2px solid;
-            font-size: 18pt;
-            background: lightgray;
+            font-size: 14pt;
+            background: floralwhite;
             /*position: sticky;*/
 
 
@@ -49,39 +71,78 @@
         img {
            height: 50px;
         }
+        .coordinates {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            position: absolute;
+            bottom: 40px;
+            left: 10px;
+            padding: 5px 10px;
+            margin: 0;
+            font-size: 11px;
+            line-height: 18px;
+            border-radius: 3px;
+            display: none;
+        }
 
-
-
-    </style>
+        label {
+            color: #FFFFFF;
+        }
+        </style>
 </head>
 <body>
 
 
 
 <div class="text-center">
-    <h1>Weather Application</h1>
-    <br>
-    <h1>San Antonio</h1>
+    <h1>Three Day Forecast</h1>
 </div>
 
 
 
-<div id="forecast-cards" class="row text-center sticky-top rounded">
+<div id="forecast-cards" class="row text-center sticky-top rounded mb-4">
 
-    <div class="col-3 rounded ml-5" id="day-1"></div>
+    <div class="col-3 rounded ml-5 day-1" id="day-1"></div>
 <div class="col-1"></div>
-    <div class="col-3 rounded" id="day-2"></div>
+    <div class="col-3 rounded day-2" id="day-2"></div>
 <div class="col-1"></div>
-    <div class="col-3 rounded mr-5" id="day-3"></div>
+    <div class="col-3 rounded mr-5 day-3" id="day-3"></div>
 
 
 </div>
 
 
-<div class="mt-3">
 
-    <div class="m-auto sticky-top " id="map" style="clear: both;"></div>
+<!--<div class="mt-3">-->
+
+<div id="menu" class="text-center">
+    <input
+            id="streets-v11"
+            type="radio"
+            name="rtoggle"
+            value="streets"
+            checked="checked"
+    />
+    <label for="streets">streets</label>
+    <input id="light-v10" type="radio" name="rtoggle" value="light" />
+    <label for="light">light</label>
+    <input id="dark-v10" type="radio" name="rtoggle" value="dark" />
+    <label for="dark">dark</label>
+    <input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors" />
+    <label for="outdoors">outdoors</label>
+    <input id="satellite-v9" type="radio" name="rtoggle" value="satellite" />
+    <label for="satellite">satellite</label>
+
+    <div class="m-auto" id="map" style="clear: both;">
+
+    </div>
+    <pre id="coordinates" class="coordinates"></pre>
 </div>
+
+
+
+
+
 
 
 
@@ -97,6 +158,7 @@
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
 <script src="js/keys.js"></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.js'></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script src="js/weather_map.js"></script>

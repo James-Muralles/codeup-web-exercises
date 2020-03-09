@@ -130,9 +130,11 @@ $('li').click(moveLi);
     },2000);
 
     //Hard mode: Bold one word every time the button is pressed
-    function everyClick() {
-
-    }
+    var counter = 1;
+    $('#get-hype').click(function () {
+        $('#thundercats span:nth-child(' + counter + ')').css("font-weight", 'bold');
+        counter++;
+    });
 
 
 </script>
