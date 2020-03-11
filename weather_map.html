@@ -60,6 +60,7 @@
             border: black 2px solid;
             font-size: 14pt;
             background: floralwhite;
+            overflow: scroll;
             /*position: sticky;*/
 
 
@@ -100,13 +101,13 @@
 
 
 
-<div id="forecast-cards" class="row text-center sticky-top rounded mb-4">
+<div id="forecast-cards" class="row text-center sticky-top rounded mb-auto d-flex justify-content-center">
 
-    <div class="col-3 rounded ml-5 day-1" id="day-1"></div>
-<div class="col-1"></div>
+    <div class="col-3 rounded day-1" id="day-1"></div>
+<!--<div class="col-1"></div>-->
     <div class="col-3 rounded day-2" id="day-2"></div>
-<div class="col-1"></div>
-    <div class="col-3 rounded mr-5 day-3" id="day-3"></div>
+<!--<div class="col-1"></div>-->
+    <div class="col-3 rounded day-3" id="day-3"></div>
 
 
 </div>
@@ -123,17 +124,17 @@
             value="streets"
             checked="checked"
     />
-    <label for="streets">streets</label>
+    <label>streets</label>
     <input id="light-v10" type="radio" name="rtoggle" value="light" />
-    <label for="light">light</label>
+    <label>light</label>
     <input id="dark-v10" type="radio" name="rtoggle" value="dark" />
-    <label for="dark">dark</label>
+    <label>dark</label>
     <input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors" />
-    <label for="outdoors">outdoors</label>
+    <label>outdoors</label>
     <input id="satellite-v9" type="radio" name="rtoggle" value="satellite" />
-    <label for="satellite">satellite</label>
+    <label>satellite</label>
 
-    <div class="m-auto" id="map" style="clear: both;">
+    <div class="m-auto rounded" id="map" style="clear: both;">
 
     </div>
     <pre id="coordinates" class="coordinates"></pre>
