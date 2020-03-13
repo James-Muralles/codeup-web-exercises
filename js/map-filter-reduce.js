@@ -45,32 +45,34 @@ function createList(arr) {
     });
     return html;
 }
-
+//1
 let threeLangs = users.filter(user => (user.languages.length <= 3));
 console.log(threeLangs);
 $('#body').append(createList(threeLangs.map(user => user.languages)));
 
+//2
 let emails = users.map(user => user.email);
 $('#body').append(createList(emails));
 
+//3
 let totalYears = users.reduce((total, user) => total + user.yearsOfExperience,0);
 let average = totalYears/users.length;
 $('#body').append(`total: ${totalYears} average: ${average}`);
 
-let longest = users.sort((a, b) => (b.email.length - a.email.length) );
-console.log(longest[0].email);
+//4
+// let longest = users.sort((a, b) => (b.email.length - a.email.length) );
+// console.log(longest[0].email);
 
 let longOne = users.reduce((current, user) => user.email.length > current.length ? user.email: current,"@" );
 
-
-
 console.log(longOne);
 
+//5
 // let strName = users.reduce((total, user, idx) =>  idx === 0  ? total.name + '.' : user.name + ', ' + total,"")
 
-let strName = users.reduce((total, user) => user.id <= 4 ? total + user.name + ", " : total + user.name + ".", "Your instructors are: ");
+let strName = users.reduce((sentence, user) => sentence === 'your instructors are:' ? sentence +  user.name  : sentence  + ", " + user.name, "Your instructors are: ");
 
-console.log(strName);
+console.log( strName + '.');
 
 
 
