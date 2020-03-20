@@ -185,25 +185,31 @@
     // console.log(helloToObject(7));
     // console.log(helloToObject([1, 2, 3]));
 
-    var students =
-        [
-            {name: "John", notes: [3, 5, 4]},
-            {name: "Tim", notes: [14, 9, 1]},
-            {name: "James", notes: [5, 8, 0]}
+    // var students =
+    //     [
+    //         {name: "John", notes: [3, 5, 4]},
+    //         {name: "Tim", notes: [14, 9, 1]},
+    //         {name: "James", notes: [5, 8, 0]}
+    //
+    //     ];
+    //
+    // function getStudentsWithNamesAndTopNotes(arr) {
+    //     var bucket = [];
+    //     console.log(arr);
+    //     for (var i = 0; i < arr.length; i++) {
+    //         var sorted = arr[i].notes.sort((a, b) => b - a);
+    //         bucket.push({name: arr[i].name, topNote: sorted[0]})
+    //     }
+    //     return bucket
+    // }
+    //
+    // console.log(getStudentsWithNamesAndTopNotes(students));
 
-        ];
+    //
 
-    function getStudentsWithNamesAndTopNotes(arr) {
-        var bucket = [];
-        console.log(arr);
-        for (var i = 0; i < arr.length; i++) {
-            var sorted = arr[i].notes.sort((a, b) => b - a);
-            bucket.push({name: arr[i].name, topNote: sorted[0]})
-        }
-        return bucket
-    }
-
-    console.log(getStudentsWithNamesAndTopNotes(students));
+    let numbers = [1, 2, 3, 4, 5];
+   numbers = numbers.map(n => n * 3)
+    console.log(numbers);
 
 
 </script>
