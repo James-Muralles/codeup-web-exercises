@@ -207,9 +207,120 @@
 
     //
 
-    let numbers = [1, 2, 3, 4, 5];
-   numbers = numbers.map(n => n * 3)
-    console.log(numbers);
+
+
+    // let bike = [
+    //     {
+    //         color: "red",
+    //         price: 100
+    //
+    //     },
+    //     {
+    //         color: "red",
+    //         price: 500
+    //
+    //     },
+    //     {
+    //         color: "red",
+    //         price: 300
+    //
+    //     }
+    //
+    // ];
+    // function highestPrice(arr){
+    //     let currentHighestPrice = 0;
+    //     for (let i = 1; i < arr.length; i++){
+    //         if (arr[i].price > arr[i-1].price){
+    //             currentHighestPrice = arr[i].price;
+    //         }
+    //     }
+    //     return currentHighestPrice;
+    // }
+    //
+    // console.log(highestPrice(bike));
+    //
+    //
+    //
+    // var arr = [1,2,3,4,5,6];
+    // function average(arr){
+    //     let sum = 0;
+    //     for (let i = 0; i < arr.length; i++){
+    //         sum += arr[i];
+    //     }
+    //     return sum/arr.length;
+    //
+    // }
+    // console.log(average(arr));
+    //
+    // function average2(){
+    //     let sum = 0;
+    //     for (let i = 1; i <= 6; i++){
+    //         sum += i;
+    //     }
+    //     return sum/6;
+    // }
+    //
+    // console.log(average2())
+
+
+   //  let numbers = [1, 2, 3, 4, 5];
+   // numbers = numbers.map(n => n * 3)
+   //  console.log(numbers);
+
+
+function fib(n) {
+        let bucket = [];
+    if (n === 1) {//if n is equal to 1 return an array of 0 1 the first to number in the fib sequence
+        return [0, 1];
+    } else { //make an array bucket
+        bucket = fib(n - 1);//use recursion to make array equal to n - 1
+        bucket.push(bucket[bucket.length - 1] + bucket[bucket.length - 2]);// push the next number -1 plus the next number -2)
+        return bucket
+    }
+}
+    process.stdin.resume();
+    process.stdin.setEncoding('utf8');
+
+    var stdin = '';
+
+    process.stdin.on('data', function (chunk) {
+
+        stdin += chunk;
+
+    }).on('end', function() {
+        var lines = stdin.split('\n');
+
+        lines = lines.filter(Boolean);
+
+        for(var i=0; i<lines.length; i++) {
+
+            process.stdout.write(lines[i]*lines[i]+"\n");
+
+        }
+    });
+    function fib(n){
+        if(n<=1){
+            return n
+        }else{
+            return fib(n-1) + fib(n-2)
+        }
+
+    }
+
+    console.log(fib(5));
+
+function addFib(n){
+    if (n<=1){
+        return n;
+    }else{
+        return addFib(n-1) + addFib(n-2);
+    }
+}
+    console.log(addFib(5));
+console.log("Here is the fibionacci sequnce: " + fib(10) + ", and here is the last number: " + addFib(10));
+
+
+
 
 
 </script>
