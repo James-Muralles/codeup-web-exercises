@@ -278,34 +278,34 @@ function fib(n) {
         return bucket
     }
 }
-    process.stdin.resume();
-    process.stdin.setEncoding('utf8');
-
-    var stdin = '';
-
-    process.stdin.on('data', function (chunk) {
-
-        stdin += chunk;
-
-    }).on('end', function() {
-        var lines = stdin.split('\n');
-
-        lines = lines.filter(Boolean);
-
-        for(var i=0; i<lines.length; i++) {
-
-            process.stdout.write(lines[i]*lines[i]+"\n");
-
-        }
-    });
-    function fib(n){
-        if(n<=1){
-            return n
-        }else{
-            return fib(n-1) + fib(n-2)
-        }
-
-    }
+    // process.stdin.resume();
+    // process.stdin.setEncoding('utf8');
+    //
+    // var stdin = '';
+    //
+    // process.stdin.on('data', function (chunk) {
+    //
+    //     stdin += chunk;
+    //
+    // }).on('end', function() {
+    //     var lines = stdin.split('\n');
+    //
+    //     lines = lines.filter(Boolean);
+    //
+    //     for(var i=0; i<lines.length; i++) {
+    //
+    //         process.stdout.write(lines[i]*lines[i]+"\n");
+    //
+    //     }
+    // });
+    // function fib(n){
+    //     if(n<=1){
+    //         return n
+    //     }else{
+    //         return fib(n-1) + fib(n-2)
+    //     }
+    //
+    // }
 
     console.log(fib(5));
 
@@ -318,6 +318,24 @@ function addFib(n){
 }
     console.log(addFib(5));
 console.log("Here is the fibionacci sequnce: " + fib(10) + ", and here is the last number: " + addFib(10));
+
+    function calculateChange( coins, total ) {
+        var dispatched = [];
+        for( var i = 0;  i < coins.length;  i++ ) {
+            dispatched[i] = 0;
+
+
+        }
+
+        for( var c = 0;  total > 0;  c++ ) {
+            dispatched[c] = Math.floor( total / coins[c] );
+            total -= dispatched[c] * coins[c];
+        }
+        console.log(dispatched);di
+        return dispatched.reduce((a,b) => a+b,0);
+    }
+
+    console.log(calculateChange([5, 3, 1], 76));
 
 
 
